@@ -74,7 +74,7 @@ if city:
             f"Rain ({u['precip_symbol']})": d["precipitation"],
         })
     df = pd.DataFrame(rows)
-    st.dataframe(df, hide_index=True, use_container_width=True)
+    st.dataframe(df, hide_index=True, width="stretch")
 
     chart_df = df.set_index("Day")[[f"High ({u['temp_symbol']})", f"Low ({u['temp_symbol']})"]]
     st.line_chart(chart_df)
